@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_185"
         android:layout_marginTop="@dimen/dp_16"
-        app:bvp_indicator_slide_mode="worm"
-        app:bvp_page_style="multi_page" />
+        app:ui_indicator_slide_mode="worm"
+        app:ui_page_style="multi_page" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

@@ -45,7 +45,7 @@ public class AttributeController {
 
   public void init(@NonNull Context context, @Nullable AttributeSet attrs) {
     if (attrs != null) {
-      TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BannerViewPager);
+      TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.UIBannerViewPager);
       initBannerAttrs(typedArray);
       initIndicatorAttrs(typedArray);
       typedArray.recycle();
@@ -54,20 +54,20 @@ public class AttributeController {
 
   private void initIndicatorAttrs(TypedArray typedArray) {
     int indicatorCheckedColor =
-        typedArray.getColor(R.styleable.BannerViewPager_bvp_indicator_checked_color,
+        typedArray.getColor(R.styleable.UIBannerViewPager_ui_indicator_checked_color,
             Color.parseColor("#8C18171C"));
     int indicatorNormalColor =
-        typedArray.getColor(R.styleable.BannerViewPager_bvp_indicator_normal_color,
+        typedArray.getColor(R.styleable.UIBannerViewPager_ui_indicator_normal_color,
             Color.parseColor("#8C6C6D72"));
     int normalIndicatorWidth =
-        (int) typedArray.getDimension(R.styleable.BannerViewPager_bvp_indicator_radius,
+        (int) typedArray.getDimension(R.styleable.UIBannerViewPager_ui_indicator_radius,
             BannerUtils.dp2px(8));
-    int indicatorGravity = typedArray.getInt(R.styleable.BannerViewPager_bvp_indicator_gravity, 0);
-    int indicatorStyle = typedArray.getInt(R.styleable.BannerViewPager_bvp_indicator_style, 0);
+    int indicatorGravity = typedArray.getInt(R.styleable.UIBannerViewPager_ui_indicator_gravity, 0);
+    int indicatorStyle = typedArray.getInt(R.styleable.UIBannerViewPager_ui_indicator_style, 0);
     int indicatorSlideMode =
-        typedArray.getInt(R.styleable.BannerViewPager_bvp_indicator_slide_mode, 0);
+        typedArray.getInt(R.styleable.UIBannerViewPager_ui_indicator_slide_mode, 0);
     int indicatorVisibility =
-        typedArray.getInt(R.styleable.BannerViewPager_bvp_indicator_visibility, 0);
+        typedArray.getInt(R.styleable.UIBannerViewPager_ui_indicator_visibility, 0);
     mBannerOptions.setIndicatorSliderColor(indicatorNormalColor, indicatorCheckedColor);
     mBannerOptions.setIndicatorSliderWidth(normalIndicatorWidth, normalIndicatorWidth);
     mBannerOptions.setIndicatorGravity(indicatorGravity);
@@ -79,16 +79,16 @@ public class AttributeController {
   }
 
   private void initBannerAttrs(TypedArray typedArray) {
-    int interval = typedArray.getInteger(R.styleable.BannerViewPager_bvp_interval, 3000);
-    boolean isAutoPlay = typedArray.getBoolean(R.styleable.BannerViewPager_bvp_auto_play, true);
-    boolean isCanLoop = typedArray.getBoolean(R.styleable.BannerViewPager_bvp_can_loop, true);
-    int pageMargin = (int) typedArray.getDimension(R.styleable.BannerViewPager_bvp_page_margin, 0);
+    int interval = typedArray.getInteger(R.styleable.UIBannerViewPager_ui_interval, 3000);
+    boolean isAutoPlay = typedArray.getBoolean(R.styleable.UIBannerViewPager_ui_auto_play, true);
+    boolean isCanLoop = typedArray.getBoolean(R.styleable.UIBannerViewPager_ui_can_loop, true);
+    int pageMargin = (int) typedArray.getDimension(R.styleable.UIBannerViewPager_ui_page_margin, 0);
     int roundCorner =
-        (int) typedArray.getDimension(R.styleable.BannerViewPager_bvp_round_corner, 0);
-    int revealWidth = (int) typedArray.getDimension(R.styleable.BannerViewPager_bvp_reveal_width,
+        (int) typedArray.getDimension(R.styleable.UIBannerViewPager_ui_round_corner, 0);
+    int revealWidth = (int) typedArray.getDimension(R.styleable.UIBannerViewPager_ui_reveal_width,
         DEFAULT_REVEAL_WIDTH);
-    int pageStyle = typedArray.getInt(R.styleable.BannerViewPager_bvp_page_style, 0);
-    int scrollDuration = typedArray.getInt(R.styleable.BannerViewPager_bvp_scroll_duration, 0);
+    int pageStyle = typedArray.getInt(R.styleable.UIBannerViewPager_ui_page_style, 0);
+    int scrollDuration = typedArray.getInt(R.styleable.UIBannerViewPager_ui_scroll_duration, 0);
     mBannerOptions.setInterval(interval);
     mBannerOptions.setAutoPlay(isAutoPlay);
     mBannerOptions.setCanLoop(isCanLoop);
